@@ -82,4 +82,6 @@ If you encounter any issues, consult the OpenVPN logs and ensure dependencies ar
 sudo systemctl status openvpn
 journalctl -xe
 ```
-
+The OpenVPN service has been created and enabled.
+You can start it with: systemctl start openvpn@server
+Make sure you have created the server configuration file at /etc/openvpn/server.conf before starting the service.
