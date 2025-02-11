@@ -27,9 +27,9 @@ install_dependencies() {
 prepare_openvpn_source() {
     echo "Preparing OpenVPN source..."
     mkdir -p /opt/openvpn_install && cd /opt/openvpn_install
-    wget https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-2.6.12/openvpn-2.6.12.tar.gz
-    tar xvf openvpn-2.6.12.tar.gz
-    cd openvpn-2.6.12
+    wget https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-2.5.9/openvpn-2.5.9.tar.gz
+    tar xvf openvpn-2.5.9.tar.gz
+    cd openvpn-2.5.9
 }
 
 # Function to download and apply patches
@@ -44,7 +44,7 @@ download_and_apply_patches() {
     )
 
     for patch in "${patches[@]}"; do
-        wget "https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-2.6.12/patches/$patch"
+        wget "https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-2.5.9/patches/$patch"
         git apply "$patch"
     done
 }
